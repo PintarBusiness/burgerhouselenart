@@ -340,8 +340,15 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);overfl
   position:absolute;top:50%;left:5vw;transform:translateY(-50%);
   pointer-events:none;
 }
-.map-label-name{font-family:var(--font-h);font-size:2rem;letter-spacing:.06em;color:var(--white)}
-.map-label-addr{font-size:.75rem;color:var(--grey);margin-top:.5rem;line-height:1.6}
+.map-label-box{
+  background:rgba(13,13,13,.82);
+  border-left:3px solid var(--yellow);
+  backdrop-filter:blur(8px);
+  padding:1.4rem 1.8rem;
+  display:inline-block;
+}
+.map-label-name{font-family:var(--font-h);font-size:2rem;letter-spacing:.06em;color:var(--white);text-shadow:0 2px 20px rgba(0,0,0,.8)}
+.map-label-addr{font-size:.78rem;color:var(--white);opacity:.7;margin-top:.5rem;line-height:1.7;text-shadow:0 1px 10px rgba(0,0,0,.9)}
 
 /* ── SOCIALS BAR ── */
 .social-bar{
@@ -416,9 +423,8 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
   .about-txt blockquote{font-size:1.3rem}
 
   /* Meni tabs — scroll horizontal na mobu */
-  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;gap:0;flex-wrap:nowrap}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{white-space:nowrap;padding:.8rem 1.4rem;font-size:.75rem}
+  .tabs{overflow-x:visible;flex-wrap:nowrap}
+  .tab{flex:1;text-align:center;white-space:nowrap;padding:.8rem .5rem;font-size:.72rem;letter-spacing:.06em}
   .meni-grid{grid-template-columns:1fr}
   .meni-card-img{height:200px}
 
@@ -522,8 +528,8 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
   </div>
   <div class="tabs r">
     <button class="tab on" onclick="tab(this,'burgerji')">Burgerji</button>
-    <button class="tab" onclick="tab(this,'ostalo')">Piščanec & Ostalo</button>
-    <button class="tab" onclick="tab(this,'pijace')">Pijače & Dodatki</button>
+    <button class="tab" onclick="tab(this,'ostalo')">Piščanec</button>
+    <button class="tab" onclick="tab(this,'pijace')">Pijače</button>
   </div>
 
   <div class="panel on" id="p-burgerji">
@@ -721,8 +727,10 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
   </iframe>
   <div class="map-edge"></div>
   <div class="map-label">
-    <div class="map-label-name">Burger House</div>
-    <div class="map-label-addr">Industrijska ulica 44<br>2230 Lenart v Slovenskih Goricah</div>
+    <div class="map-label-box">
+      <div class="map-label-name">Burger House</div>
+      <div class="map-label-addr">Industrijska ulica 44<br>2230 Lenart v Slovenskih Goricah</div>
+    </div>
   </div>
 </div>
 
