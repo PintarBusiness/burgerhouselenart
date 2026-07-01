@@ -364,6 +364,29 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);overfl
 .map-label-name{font-family:var(--font-h);font-size:2rem;letter-spacing:.06em;color:var(--white);text-shadow:0 2px 20px rgba(0,0,0,.8)}
 .map-label-addr{font-size:.78rem;color:var(--white);opacity:.7;margin-top:.5rem;line-height:1.7;text-shadow:0 1px 10px rgba(0,0,0,.9)}
 
+/* ── REVIEW CTA ── */
+.review-cta{
+  background:var(--yellow);padding:3.5rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+}
+.review-cta-txt h3{
+  font-family:var(--font-h);font-size:clamp(1.6rem,3vw,2.4rem);
+  color:#000;letter-spacing:.02em;margin-bottom:.4rem;
+}
+.review-cta-txt p{font-size:.85rem;color:rgba(0,0,0,.65)}
+.review-cta-btn{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-family:var(--font-h);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;
+  background:#000;color:var(--yellow);text-decoration:none;
+  padding:1rem 2.2rem;transition:transform .15s,background .2s;white-space:nowrap;
+}
+.review-cta-btn:hover{background:#1c1c1c;transform:translateY(-2px)}
+.review-cta-btn svg{width:20px;height:20px}
+@media(max-width:700px){
+  .review-cta{flex-direction:column;text-align:center;padding:2.5rem 6vw}
+  .review-cta-btn{width:100%;justify-content:center}
+}
+
 /* ── SOCIALS BAR ── */
 .social-bar{
   background:var(--dark);border-top:1px solid var(--border);
@@ -553,7 +576,7 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
     <div class="meni-grid">
 
       <div class="meni-card r">
-        <img class="meni-card-img" src="images/burger.jpg" alt="Klasik Burger">
+        <img class="meni-card-img" src="images/Hamburger.jpg" alt="Klasik Burger">
         <div class="meni-card-body">
           <div class="meni-card-name">Klasik Burger</div>
           <div class="meni-card-desc">Domača bombetka, Salsa Rosa, 180g goveji polpet, sveža kumara, paradižnik, čebula, solata</div>
@@ -573,7 +596,7 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
       </div>
 
       <div class="meni-card r" style="transition-delay:.08s">
-        <img class="meni-card-img" src="images/burger3.jpg" alt="Bejkn">
+        <img class="meni-card-img" src="images/Bejkn.jpg" alt="Bejkn">
         <div class="meni-card-body">
           <div class="meni-card-name">Bejkn</div>
           <div class="meni-card-desc">Domača bombetka, hišna BBQ omaka, 180g goveji polpet, čedar sir, pečena slanina, popečeni šampinjoni in čebula, jajce na oko, solata</div>
@@ -603,7 +626,7 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
       </div>
 
       <div class="meni-card r" style="transition-delay:.20s">
-        <img class="meni-card-img" src="images/19f129f9b42530721e57.jpg" alt="Porki">
+        <img class="meni-card-img" src="images/Porki.jpg" alt="Porki">
         <div class="meni-card-body">
           <div class="meni-card-name">Porki</div>
           <div class="meni-card-desc">Domača bombetka, hišna gorčična omaka, 140g svinjskega fileja, sir Brie, karamelizirana čebula, rukola</div>
@@ -633,7 +656,7 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
       </div>
 
       <div class="meni-card r" style="transition-delay:.32s">
-        <img class="meni-card-img" src="images/19f129f9b3f2ee46ff35.jpg" alt="Crack Burger">
+        <img class="meni-card-img" src="images/burger2.jpg" alt="Crack Burger">
         <div class="meni-card-body">
           <div class="meni-card-name">Crack Burger</div>
           <div class="meni-card-desc">Domača bombetka, 2x 90g goveja pleskavica prekrita s cedar strdi in slanino, hišna omaka, kisla kumarica, čebula, čedar sir</div>
@@ -663,7 +686,7 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
       </div>
 
       <div class="meni-card r" style="transition-delay:.44s">
-        <img class="meni-card-img" src="images/burger4.jpg" alt="Badboy">
+        <img class="meni-card-img" src="images/Badboy.jpg" alt="Badboy">
         <div class="meni-card-body">
           <div class="meni-card-name">Badboy</div>
           <div class="meni-card-desc">Domača bombetka, 180g goveji polpet, jurčkova krema, tartufova omaka, pečena slanina, rukola, balzamična redukcija, olje belega tartufa, Ementaler sir, sladki krompirček</div>
@@ -673,7 +696,7 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
       </div>
 
       <div class="meni-card r" style="transition-delay:.48s">
-        <img class="meni-card-img" src="images/random.jpg" alt="Mr. Smash">
+        <img class="meni-card-img" src="images/Mr-Smash.jpg" alt="Mr. Smash">
         <div class="meni-card-body">
           <div class="meni-card-name">Mr. Smash</div>
           <div class="meni-card-desc">Domača bombetka, 2x 90g goveji polpet, gorčična omaka, kečap, Nacho sir, čedar sir, popečena čebula, jalapeno, solata</div>
@@ -996,6 +1019,23 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
   </div>
 </div>
 
+<!-- REVIEW CTA -->
+<div class="review-cta">
+  <div class="review-cta-txt">
+    <h3>Vaše mnenje nam veliko pomeni!</h3>
+    <p>Če vam je bilo pri nas dobro, nam pustite oceno na Googlu — vzame samo minuto.</p>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;justify-content:center">
+    <a class="review-cta-btn" href="https://www.google.com/search?q=burger+house+lenart&rlz=1C1GCEA_enSI918SI918&oq=burg&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MhIIARAuGCcYrwEYxwEYgAQYigUyBggCECMYJzIGCAMQRRg7MgYIBBBFGDkyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQgxNTg1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+      Ocenite nas
+    </a>
+    <a href="https://www.google.com/search?q=burger+house+lenart&rlz=1C1GCEA_enSI918SI918&oq=burg&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MhIIARAuGCcYrwEYxwEYgAQYigUyBggCECMYJzIGCAMQRRg7MgYIBBBFGDkyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQgxNTg1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener" style="background:#fff;padding:8px;display:block;line-height:0;border-radius:4px" title="Skeniraj za oceno na Googlu">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAegAAAHoAQMAAAC4nu5PAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAALiMAAC4jAXilP3YAAANbSURBVHic7ZZBkttADAP5/08zFREAOalcUrkEKWhtSzNkQwe3qa3+m6NChw79b9M1R39/7+lnDXeob/c7iwhtSeOLx0bRoG/Jc90qidCeNFyp7t8lF1VByBKhrelJeKTAEhGl2ND+NG2QMLsqvUL/B7SeBpoTJTsoElThCPndsyS0Bz1H/8FfrVWh3ehzlMyhD3OlodAvEdqQ3kmA8T8vakSjeh8IECa0L93q4DMBA6NuS6vltSW0E71893YB3/K9w46P0G40S7osfZZivtLpeG8X2ojmPBhL9DxAz1xh1WdW0KHQhjQOmtA7HCbgvEaidSy0Ga2RgPZrywJnMbfjO7Qdzdq+VwnkXD1Qr9CedDEASzwRmid6tNF8PIT2pAsWsKcZsKCuJ0ztod1ofvHfudjFDzaUmuhXaF96uJIv3ZgPLUmwW7oM7UnDkKnIjeaAKJa70PpaE9qSPp/MkR0K25HBO4W2o1nBVADLAieFYN0itCeN7/87w4yGK0wqFCnRbIW2pDcGBhxH+hGHTlVoY/rkQJkundGOsYBriRPakC4OCO4cEbQPuuFMHY9Ce9H9FNg3l0cnELvboU3pXui8FbWXHA0YKKEdaXGaEPz11zaQA6hTaDu6Sd5BMYpwm/TJ6dC2tLiSEGImSy1IhS6hDek6bb37019kWDkyhTalEYCO/sUJ6lMntbkKbUefBYcBXHgtKpX3M7QfjW+dbWCURm1wE/b1dS20E/2dSiWwkzg1BciwCu1L43ePyVAoKbnU1YhvyhPakJ7SsJCDOMqEOCS6Fg1tRp+QpjNnPMCeUl5tZ2hDuqYdM5+rpjES5WAshLakuYtF0ZeuzUWKkGdyhDai2cFBgM2ji4TRfwArWmg3mtw++4t6cJ8pMObcIrQfTV8mgJfoZTg84n7dV2gnmj5AkaPMpJDTtewJ7UhLg5Yec6UoPAw2j7uhHWnJMmA9m5wOBUS60JbQZvQcZ73nEeSZGtzGRmhTuuFAv/UdB9wqBIc2pdmrLRrSbN6d8WpDQhvSuweCA4K2oPsOEKGh/eitY6leOcPes9uhrWkpMRdoWydu9lsJ7UnXMeX+/CdstWo0hPakWUJDLQEnhjt5VaFtafzWdyIw895Bub33C+1I/8UROnTof5n+AQ03O0n0fANwAAAAAElFTkSuQmCC" alt="QR koda za Google oceno" width="76" height="76" style="display:block;width:76px;height:76px">
+    </a>
+  </div>
+</div>
+
 <!-- SOCIALS -->
 <div class="social-bar">
   <span class="social-bar-txt">Sledi nam</span>
@@ -1007,6 +1047,10 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
     <a class="social-btn" href="https://www.instagram.com/burger.house.lenart/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2.5"/></svg>
       Instagram
+    </a>
+    <a class="social-btn" href="https://www.tiktok.com/@burger.house.lena" target="_blank" rel="noopener">
+      <svg viewBox="0 0 448 512" fill="currentColor"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3V349.4A162.6 162.6 0 11185 188.3V278a74.6 74.6 0 1052.2 71.2V0h88a121.2 121.2 0 001.9 22.2A122.2 122.2 0 00381 102.4a121.4 121.4 0 0067 20.1z"/></svg>
+      TikTok
     </a>
   </div>
 </div>
@@ -1033,7 +1077,7 @@ const ureData = [
   {d:'Četrtek',    t:'10:00 – 20:00', z:false},
   {d:'Petek',      t:'11:00 – 21:00', z:false},
   {d:'Sobota',     t:'Zaprto', z:true},
-  {d:'Nedelja',    t:'Zaprto', z:true},
+  {d:'Nedelje in prazniki', t:'Zaprto', z:true},
 ];
 // rawDay: 0=ned=index 6, 1=pon=0 ...
 const todayIdx = rawDay === 0 ? 6 : rawDay - 1;
@@ -1047,7 +1091,7 @@ ureData.forEach((h,i)=>{
 });
 
 // Gallery strip
-const galImgs = ['burger.jpg','chessburger.jpg','burger3.jpg','burger4.jpg','cikn.jpg','Kiki-von-Riki.jpg','Spajsi.jpg','Party-Frik.jpg','Vegili.jpg','Big-Lil.jpg','19f129f9b42530721e57.jpg','19f129f9b3f2ee46ff35.jpg','wrap.jpg','random.jpg'];
+const galImgs = ['Badboy.jpg','wrap.jpg','Kiki-von-Riki.jpg','burger8.jpg','Spajsi.jpg','pekaburgerjov.jpg','Big-Lil.jpg','burger7.jpg','Vegili.jpg','ekipa.jpg','Party-Frik.jpg','burger10.jpg','Bejkn.jpg','osebakijeburger.jpg','chessburger.jpg','Mr-Smash.jpg','Hamburger.jpg','cikn.jpg','Porki.jpg'];
 const strip = document.getElementById('galStrip');
 [...galImgs,...galImgs].forEach(src=>{
   const img = document.createElement('img');
