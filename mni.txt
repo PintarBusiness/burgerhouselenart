@@ -1,4 +1,4 @@
-mni
+meni
 za otroke
 dodatno
 priloge
@@ -13,3 +13,11 @@ qr koda da se naredim
 naredi z obema pisavama
 
 z intervjuja besedilo
+
+-----------------------
+qr koda za v restavracijo da te da tako da te vrže direkt na meni
+v navigaciji da se linki vidijo in pa ocena lenart v slo gor v črni barvi sprobaj vidljivost
+na prvi strani desno tiktok ionstagram in Facebook
+slike meniji da se viidijo Burgerji hrana
+galerija slike dam ven meni slike, pa dodam slike z maila in se vrtijo
+pri ekipa dam 3 slike vse iste
