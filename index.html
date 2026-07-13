@@ -34,14 +34,13 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);overfl
   position:fixed;inset:0 0 auto;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
   padding:1.4rem 5vw;
-  transition:background .35s,padding .35s,border-color .35s;
-  border-bottom:1px solid transparent;
-}
-#nav.stuck{
   background:rgba(13,13,13,.95);
   backdrop-filter:blur(16px);
+  transition:padding .35s,border-color .35s;
+  border-bottom:1px solid var(--border);
+}
+#nav.stuck{
   padding:1rem 5vw;
-  border-bottom-color:var(--border);
 }
 .nav-logo{height:52px;width:52px;object-fit:cover;border-radius:50%;border:2px solid var(--yellow);background:#fff}
 .nav-links{display:flex;align-items:center;gap:2.8rem;list-style:none}
@@ -87,6 +86,30 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);overfl
   text-decoration:none;color:var(--white);transition:color .2s;
 }
 #mob-menu a:hover{color:var(--yellow)}
+
+/* ── FLOATING SOCIAL ICONS ── */
+.float-social{
+  position:absolute;top:50%;right:2rem;transform:translateY(-50%);
+  z-index:5;display:flex;flex-direction:column;gap:.9rem;
+}
+.float-social a{
+  width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(13,13,13,.6);border:1px solid rgba(242,237,230,.15);
+  backdrop-filter:blur(10px);color:var(--white);
+  transition:background .2s,border-color .2s,transform .2s;
+}
+.float-social a:hover{background:var(--yellow);border-color:var(--yellow);color:#000;transform:translateX(-4px)}
+.float-social a svg{width:20px;height:20px}
+
+@media(max-width:860px){
+  .float-social{
+    top:auto;bottom:1.2rem;right:50%;transform:translateX(50%);
+    flex-direction:row;gap:.7rem;
+  }
+  .float-social a{width:40px;height:40px}
+  .float-social a:hover{transform:translateY(-3px)}
+}
 
 /* ── HERO ── */
 .hero{
@@ -231,7 +254,8 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);overfl
 }
 .meni-card:hover{transform:translateY(-5px);box-shadow:0 24px 48px rgba(0,0,0,.6);z-index:1}
 .meni-card-img{
-  width:100%;height:220px;object-fit:cover;display:block;
+  width:100%;height:220px;object-fit:contain;object-position:center;display:block;
+  background:var(--black);
   transition:transform .5s;
 }
 .meni-card:hover .meni-card-img{transform:scale(1.06)}
@@ -444,8 +468,8 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
 
   /* Meni kartica na mobu */
   .meni-grid{grid-template-columns:1fr;gap:1px}
-  .meni-card{display:grid;grid-template-columns:120px 1fr;align-items:stretch}
-  .meni-card-img{width:120px;height:100%;min-height:110px;object-fit:cover}
+  .meni-card{display:block}
+  .meni-card-img{width:100%;height:200px;object-fit:contain;background:var(--black)}
   .meni-card-body{padding:1rem 1.2rem}
   .meni-card-name{font-size:1.1rem;margin-bottom:.2rem}
   .meni-card-desc{font-size:.72rem;margin-bottom:.4rem}
@@ -527,6 +551,20 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grad"></div>
+
+  <!-- FLOATING SOCIAL -->
+  <div class="float-social">
+    <a href="https://www.facebook.com/profile.php?id=100063612430529&locale=sl_SI" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/burger.house.lenart/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2.5"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@burger.house.lena" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 448 512" fill="currentColor"><path d="M448 209.9a210.1 210.1 0 01-122.8-39.3V349.4A162.6 162.6 0 11185 188.3V278a74.6 74.6 0 1052.2 71.2V0h88a121.2 121.2 0 001.9 22.2A122.2 122.2 0 00381 102.4a121.4 121.4 0 0067 20.1z"/></svg>
+    </a>
+  </div>
+
   <div class="hero-body">
     <div class="hero-tag">Lenart v Slovenskih Goricah · 4.9★ 345 ocen</div>
     <h1 class="hero-h1">BURGER<br><em>HOUSE</em></h1>
@@ -974,6 +1012,13 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
         <div class="team-role">Chef & soustanovitelj</div>
       </div>
     </div>
+    <div class="team-card r" style="transition-delay:.24s">
+      <img src="images/tretja.jpg" alt="Ekipa Burger House">
+      <div class="team-info">
+        <div class="team-name">Ekipa</div>
+        <div class="team-role">Burger House Lenart</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1003,6 +1048,23 @@ footer p{font-size:.7rem;color:var(--grey);letter-spacing:.06em}
     </div>
   </div>
 </section>
+
+<!-- REVIEW CTA -->
+<div class="review-cta">
+  <div class="review-cta-txt">
+    <h3>Vaše mnenje nam veliko pomeni!</h3>
+    <p>Če vam je bilo pri nas dobro, nam pustite oceno na Googlu — vzame samo minuto.</p>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;justify-content:center">
+    <a class="review-cta-btn" href="https://www.google.com/search?q=burger+house+lenart&rlz=1C1GCEA_enSI918SI918&oq=burg&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MhIIARAuGCcYrwEYxwEYgAQYigUyBggCECMYJzIGCAMQRRg7MgYIBBBFGDkyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQgxNTg1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+      Ocenite nas
+    </a>
+    <a href="https://www.google.com/search?q=burger+house+lenart&rlz=1C1GCEA_enSI918SI918&oq=burg&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MhIIARAuGCcYrwEYxwEYgAQYigUyBggCECMYJzIGCAMQRRg7MgYIBBBFGDkyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQgxNTg1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener" style="background:#fff;padding:8px;display:block;line-height:0;border-radius:4px" title="Skeniraj za oceno na Googlu">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAegAAAHoAQMAAAC4nu5PAAAABlBMVEUAAAD///+l2Z/dAAAAAnRSTlP//8i138cAAAAJcEhZcwAALiMAAC4jAXilP3YAAANbSURBVHic7ZZBkttADAP5/08zFREAOalcUrkEKWhtSzNkQwe3qa3+m6NChw79b9M1R39/7+lnDXeob/c7iwhtSeOLx0bRoG/Jc90qidCeNFyp7t8lF1VByBKhrelJeKTAEhGl2ND+NG2QMLsqvUL/B7SeBpoTJTsoElThCPndsyS0Bz1H/8FfrVWh3ehzlMyhD3OlodAvEdqQ3kmA8T8vakSjeh8IECa0L93q4DMBA6NuS6vltSW0E71893YB3/K9w46P0G40S7osfZZivtLpeG8X2ojmPBhL9DxAz1xh1WdW0KHQhjQOmtA7HCbgvEaidSy0Ga2RgPZrywJnMbfjO7Qdzdq+VwnkXD1Qr9CedDEASzwRmid6tNF8PIT2pAsWsKcZsKCuJ0ztod1ofvHfudjFDzaUmuhXaF96uJIv3ZgPLUmwW7oM7UnDkKnIjeaAKJa70PpaE9qSPp/MkR0K25HBO4W2o1nBVADLAieFYN0itCeN7/87w4yGK0wqFCnRbIW2pDcGBhxH+hGHTlVoY/rkQJkundGOsYBriRPakC4OCO4cEbQPuuFMHY9Ce9H9FNg3l0cnELvboU3pXui8FbWXHA0YKKEdaXGaEPz11zaQA6hTaDu6Sd5BMYpwm/TJ6dC2tLiSEGImSy1IhS6hDek6bb37019kWDkyhTalEYCO/sUJ6lMntbkKbUefBYcBXHgtKpX3M7QfjW+dbWCURm1wE/b1dS20E/2dSiWwkzg1BciwCu1L43ePyVAoKbnU1YhvyhPakJ7SsJCDOMqEOCS6Fg1tRp+QpjNnPMCeUl5tZ2hDuqYdM5+rpjES5WAshLakuYtF0ZeuzUWKkGdyhDai2cFBgM2ji4TRfwArWmg3mtw++4t6cJ8pMObcIrQfTV8mgJfoZTg84n7dV2gnmj5AkaPMpJDTtewJ7UhLg5Yec6UoPAw2j7uhHWnJMmA9m5wOBUS60JbQZvQcZ73nEeSZGtzGRmhTuuFAv/UdB9wqBIc2pdmrLRrSbN6d8WpDQhvSuweCA4K2oPsOEKGh/eitY6leOcPes9uhrWkpMRdoWydu9lsJ7UnXMeX+/CdstWo0hPakWUJDLQEnhjt5VaFtafzWdyIw895Bub33C+1I/8UROnTof5n+AQ03O0n0fANwAAAAAElFTkSuQmCC" alt="QR koda za Google oceno" width="76" height="76" style="display:block;width:76px;height:76px">
+    </a>
+  </div>
+</div>
 
 <!-- MAP -->
 <div class="map-wrap">
@@ -1076,7 +1138,7 @@ ureData.forEach((h,i)=>{
 });
 
 // Gallery strip
-const galImgs = ['Badboy.jpg','wrap.jpg','Kiki-von-Riki.jpg','burger8.jpg','Spajsi.jpg','pekaburgerjov.jpg','Big-Lil.jpg','burger7.jpg','Vegili.jpg','ekipa.jpg','Party-Frik.jpg','burger10.jpg','Bejkn.jpg','osebakijeburger.jpg','chessburger.jpg','Mr-Smash.jpg','Hamburger.jpg','cikn.jpg','Porki.jpg'];
+const galImgs = ['wrap.jpg','burger8.jpg','pekaburgerjov.jpg','burger7.jpg','ekipa.jpg','burger10.jpg','osebakijeburger.jpg','20260709_190553.jpg','burger.jpg','burger2.jpg','burger3.jpg','burger4.jpg','burger5.jpg','burger6.jpg','burger9.jpg','FB_IMG_1783772136138.jpg','FB_IMG_1783772151276.jpg','FB_IMG_1783772166502.jpg','FB_IMG_1783772220845.jpg','FB_IMG_1783772249048.jpg','FB_IMG_1783772265286.jpg','FB_IMG_1783772286028.jpg','FB_IMG_1783772311394.jpg','FB_IMG_1783772356251.jpg','FB_IMG_1783772381878.jpg','FB_IMG_1783772449024.jpg','FB_IMG_1783772491350.jpg','FB_IMG_1783772542093.jpg'];
 const strip = document.getElementById('galStrip');
 [...galImgs,...galImgs].forEach(src=>{
   const img = document.createElement('img');
